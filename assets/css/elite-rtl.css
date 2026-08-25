@@ -1,0 +1,35 @@
+/* RTL layer for Arabic — flips layout, mirrors positioning. Changes no color, size or spacing. */
+html[dir="rtl"] body{font-family:"Tahoma","Red Hat Text",system-ui,sans-serif}
+html[dir="rtl"] .mark{text-indent:0;letter-spacing:.2em}
+html[dir="rtl"] .nav-links{margin-left:0;margin-right:auto}
+html[dir="rtl"] .nav-tools{margin-left:0;margin-right:clamp(8px,2vw,22px)}
+html[dir="rtl"] .rail-item{border-left:0;border-right:1px solid var(--line-obsidian)}
+html[dir="rtl"] .rail-item:first-child{border-right:0}
+html[dir="rtl"] .meter-top{flex-direction:row-reverse}
+html[dir="rtl"] .meter-fill{background:linear-gradient(270deg,var(--gold),#8C6236)}
+html[dir="rtl"] .btn .arrow,html[dir="rtl"] .link-arrow .arrow{transform:scaleX(-1)}
+html[dir="rtl"] .step{grid-template-columns:1fr 48px}
+html[dir="rtl"] .marquee-track{animation-direction:reverse}
+html[dir="rtl"] .foot-bottom{flex-direction:row-reverse}
+html[dir="rtl"] .segmented{flex-direction:row-reverse}
+@media (max-width:860px){html[dir="rtl"] .nav-tools{margin-right:auto;margin-left:0}}
+/* --- Components added in the refresh --- */
+html[dir="rtl"] .svc__visual::after{background:linear-gradient(180deg,rgba(8,8,10,.05),rgba(8,8,10,.5))}
+html[dir="rtl"] .search-row{flex-direction:row-reverse}
+html[dir="rtl"] .demo-row{direction:rtl}
+html[dir="rtl"] .foot-bottom{text-align:right}
+/* Latin brand names inside Arabic copy keep their own direction. */
+html[dir="rtl"] .story__name,html[dir="rtl"] .logo-cell-grid,html[dir="rtl"] .logo-cell{unicode-bidi:isolate}
+/* Tabular figures read left-to-right even in an RTL block. */
+html[dir="rtl"] .story__stats b,html[dir="rtl"] .rail-n,html[dir="rtl"] .meter-val,html[dir="rtl"] .kpi__value{direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .crew{flex-direction:row-reverse;justify-content:flex-end}
+html[dir="rtl"] .crew__faces{flex-direction:row-reverse}
+html[dir="rtl"] .story__cat{background:linear-gradient(270deg,#D2A671,#C3935E 45%,#8C6236);-webkit-background-clip:text;background-clip:text}
+html[dir="rtl"] .story__stats{flex-direction:row-reverse;justify-content:flex-end}
+html[dir="rtl"] .dcard__title{flex-direction:row-reverse;justify-content:flex-end}
+html[dir="rtl"] .dcard__cta-ico{transform:scaleX(-1)}
+html[dir="rtl"] .dcard:hover a.dcard__cta .dcard__cta-ico{transform:scaleX(-1) translateX(4px)}
+html[dir="rtl"] .reel__figs{flex-direction:row-reverse;justify-content:flex-end}
+html[dir="rtl"] .reel__ident{flex-direction:row-reverse}
+html[dir="rtl"] .reel__hatch{background:repeating-linear-gradient(-45deg,var(--line) 0 1px,transparent 1px 8px)}
+html[dir="rtl"] .reel__name,html[dir="rtl"] .reel__badge{unicode-bidi:isolate}
