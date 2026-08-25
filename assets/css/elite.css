@@ -782,13 +782,9 @@ img.is-broken{visibility:hidden}
 .reel-head{text-align:center;margin-bottom:clamp(40px,7vh,80px)}
 .reel-kicker{
   font-family:Montserrat,system-ui,sans-serif;font-weight:600;font-size:var(--step--1);
-  letter-spacing:.24em;text-transform:uppercase;color:var(--gold-text);margin-bottom:12px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--gold-text);margin:0;
 }
-.reel-title{
-  font-family:"Red Hat Display",system-ui,sans-serif;font-weight:700;
-  font-size:clamp(2.6rem,1.6rem + 4.6vw,5.4rem);line-height:.95;
-  letter-spacing:-.03em;text-transform:uppercase;color:var(--ink);
-}
+
 
 .reel{border-inline:1px solid var(--line)}
 .reel__row{

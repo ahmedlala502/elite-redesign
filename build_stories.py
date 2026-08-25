@@ -288,8 +288,7 @@ def reel(ar=False):
   <section class="sec sec--sunken reel-sec" aria-labelledby="reel-h">
     <div class="wrap">
       <div class="reel-head reveal">
-        <p class="reel-kicker">&laquo; {L('Featured work','أعمال مختارة')} &raquo;</p>
-        <h2 class="reel-title" id="reel-h">{L('Case studies.','دراسات الحالة.')}</h2>
+        <h2 class="reel-kicker" id="reel-h">&laquo; {L('Featured work','أعمال مختارة')} &raquo;</h2>
       </div>
       <div class="reel">{''.join(rows)}
       </div>
