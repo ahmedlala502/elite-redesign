@@ -147,6 +147,9 @@
     }
     button.addEventListener('click', function(){
       var paused = region.classList.toggle('is-paused');
+      // Under reduced motion the CSS holds the track still, so Play has to say
+      // so explicitly — otherwise the button looks live and does nothing.
+      region.classList.toggle('is-playing', reduce && !paused);
       button.setAttribute('aria-pressed', String(paused));
       button.textContent = paused ? t('play') : t('pause');
     });

@@ -39,9 +39,9 @@ index_body = f"""
     <div class="rail hero-fade" style="animation-delay:.95s">
       <div class="wrap rail-in">
         <div class="rail-item"><span class="rail-n" data-count="52">52</span><span class="rail-l">دولة نصل إليها</span></div>
-        <div class="rail-item"><span class="rail-n" data-count="50" data-suffix="B">50B</span><span class="rail-l">إجمالي المتابعين</span></div>
-        <div class="rail-item"><span class="rail-n" data-count="85" data-suffix="K">85K</span><span class="rail-l">صانع محتوى</span></div>
-        <div class="rail-item"><span class="rail-n" data-count="1500">1500</span><span class="rail-l">علامة عملنا معها</span></div>
+        <div class="rail-item"><span class="rail-n" data-count="50" data-suffix=" مليار">50 مليار</span><span class="rail-l">إجمالي المتابعين</span></div>
+        <div class="rail-item"><span class="rail-n" data-count="85" data-suffix=" ألف">85 ألف</span><span class="rail-l">صانع محتوى</span></div>
+        <div class="rail-item"><span class="rail-n" data-count="1500">1500</span><span class="rail-l">علامة تجارية</span></div>
       </div>
     </div>
   </section>
@@ -171,13 +171,13 @@ dash_body = f"""
   <section class="sec sec--sunken"><div class="wrap">
     <div class="sec-head reveal"><p class="eyebrow">نظرة على المؤثرين</p><h2 class="sec-title">كل صانع محتوى، كل مرحلة.</h2><p class="sec-sub">تابع كل مؤثر من أول تواصل إلى التغطية المنشورة، دون ملاحقة أحد للحصول على تحديث.</p></div>
     <div class="kpi-grid reveal" aria-label="مراحل الحملة">
-      <div class="kpi"><span class="kpi__label">معلّق</span><span class="kpi__value" data-demo-stage="pending">0</span></div>
+      <div class="kpi"><span class="kpi__label">قيد الانتظار</span><span class="kpi__value" data-demo-stage="pending">0</span></div>
       <div class="kpi"><span class="kpi__label">مؤكَّد</span><span class="kpi__value" data-demo-stage="confirmed">0</span></div>
-      <div class="kpi"><span class="kpi__label">زار</span><span class="kpi__value" data-demo-stage="visited">0</span></div>
-      <div class="kpi"><span class="kpi__label">سلَّم</span><span class="kpi__value" data-demo-stage="delivered">0</span></div>
-      <div class="kpi"><span class="kpi__label">صناعة المحتوى</span><span class="kpi__value" data-demo-stage="post-creation">0</span></div>
-      <div class="kpi"><span class="kpi__label">شارك</span><span class="kpi__value" data-demo-stage="shared">0</span></div>
-      <div class="kpi"><span class="kpi__label">غطّى</span><span class="kpi__value" data-demo-stage="covered">0</span></div>
+      <div class="kpi"><span class="kpi__label">تمت الزيارة</span><span class="kpi__value" data-demo-stage="visited">0</span></div>
+      <div class="kpi"><span class="kpi__label">تم التسليم</span><span class="kpi__value" data-demo-stage="delivered">0</span></div>
+      <div class="kpi"><span class="kpi__label">قيد الإنتاج</span><span class="kpi__value" data-demo-stage="post-creation">0</span></div>
+      <div class="kpi"><span class="kpi__label">تمت المشاركة</span><span class="kpi__value" data-demo-stage="shared">0</span></div>
+      <div class="kpi"><span class="kpi__label">تمت التغطية</span><span class="kpi__value" data-demo-stage="covered">0</span></div>
     </div>
     <div class="proof mt-12">
       <div class="card reveal"><div class="row" style="justify-content:space-between"><div><span class="eyebrow">مساحة مباشرة</span><h3 class="h4 mt-4">الحملات الأخيرة</h3></div><a class="link-arrow" href="contacts.html">عرض الكل <span class="arrow" aria-hidden="true">→</span></a></div><div class="demo-list mt-6" data-demo-campaigns></div></div>
@@ -196,10 +196,10 @@ dash_body = f"""
     <div class="kpi-grid mt-12">
       <article class="card card--hover reveal"><h3 class="card__title">المؤثرون والمفضّلة</h3><p class="muted">تصفّح الشبكة، احفظ المفضّلة وابنِ قوائم مختصرة يراها فريقك كله.</p></article>
       <article class="card card--hover reveal" style="transition-delay:.08s"><h3 class="card__title">الفروع</h3><p class="muted">أدِر علامات متعددة المواقع مع تغطية وتسجيلات دخول لكل فرع.</p></article>
-      <article class="card card--hover reveal" style="transition-delay:.16s"><h3 class="card__title">الماسح</h3><p class="muted">تحقّق من تسجيل صنّاع المحتوى في الموقع بمسح سريع — بلا أوراق.</p></article>
-      <article class="card card--hover reveal" style="transition-delay:.24s"><h3 class="card__title">الحملات</h3><p class="muted">وجّز، وافق وراقب كل مرحلة حملة في خط زمني واحد.</p></article>
+      <article class="card card--hover reveal" style="transition-delay:.16s"><h3 class="card__title">الماسح الضوئي</h3><p class="muted">تحقّق من تسجيل صنّاع المحتوى في الموقع بمسح سريع — بلا أوراق.</p></article>
+      <article class="card card--hover reveal" style="transition-delay:.24s"><h3 class="card__title">الحملات</h3><p class="muted">اكتب الموجز، ووافق على المحتوى، وتابع كل مرحلة من الحملة في خط زمني واحد.</p></article>
       <article class="card card--hover reveal" style="transition-delay:.32s"><h3 class="card__title">التقارير</h3><p class="muted">تغطية حسب الصيغة والمؤثر، جاهزة للمشاركة مع أصحاب المصلحة.</p></article>
-      <article class="card card--hover reveal" style="transition-delay:.4s"><h3 class="card__title">دعم 24/7</h3><p class="muted">فريق مباشر وراء المنصة متى احتاجت حملةٌ إلى يد.</p></article>
+      <article class="card card--hover reveal" style="transition-delay:.4s"><h3 class="card__title">دعم على مدار الساعة</h3><p class="muted">فريق مباشر وراء المنصة متى احتاجت حملةٌ إلى يد.</p></article>
     </div>
   </div></section>
 

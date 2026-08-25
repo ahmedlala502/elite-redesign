@@ -53,6 +53,21 @@ ACCENTS = {
 }
 
 
+def ar_figure(v):
+    """'60M' -> '60 مليون'. Latin magnitude letters do not belong in an Arabic
+    figure; a reader of the Arabic tree should not have to know that K means
+    thousand."""
+    v = str(v).strip()
+    for suffix, word in (("B", "مليار"), ("M", "مليون"), ("K", "ألف")):
+        if v.upper().endswith(suffix):
+            return "%s %s" % (v[:-1], word)
+    return v
+
+
+def figure(v, ar):
+    return ar_figure(v) if ar else str(v)
+
+
 def market(place, ar):
     return MARKETS_AR.get(place, place) if ar else place
 
@@ -107,7 +122,8 @@ def describe(rec, ar=False):
     place = market_in(rec["market"], ar)
     if ar:
         where = (" في %s" % place) if place else ""
-        reach = ("بوصول إلى %s متابع." % rec["followers"]) if n == 1 else ("بوصول تراكمي إلى %s متابع." % rec["followers"])
+        f = ar_figure(rec["followers"])
+        reach = ("بوصول إلى %s متابع." % f) if n == 1 else ("بوصول تراكمي إلى %s متابع." % f)
         return "%s%s، %s" % (roster(n, True), where, reach)
     who = roster(n, False)
     who = who[0].upper() + who[1:]
@@ -120,7 +136,7 @@ def stat_line(rec, ar=False):
     """The one-line figure summary that sits under the brand name."""
     n = str(rec["influencers"]).lstrip("+")
     if ar:
-        return "%s متابع · %s صانع محتوى" % (rec["followers"], n)
+        return "%s متابع · %s صانع محتوى" % (ar_figure(rec["followers"]), n)
     return "%s followers · %s creators" % (rec["followers"], n)
 
 
@@ -242,12 +258,12 @@ def reel(ar=False):
         name = rec["name"]
         label = (LABELS_AR if ar else LABELS_EN)[rec["category"]]
         role_bits = [b for b in (market(rec["market"], ar), label) if b]
-        role = " // ".join(role_bits)
+        role = (" · " if ar else " // ").join(role_bits)
         creators = str(rec["influencers"]).lstrip("+")
         # The reference badge showed a runtime; the figures we actually hold are
         # reach and roster, so the badge carries those instead of a made-up one.
         badge = L("%s REACH // %s CREATORS" % (rec["followers"], creators),
-                  "‏%s وصول // %s صانع محتوى" % (rec["followers"], creators))
+                  "‏وصول %s · %s صانع محتوى" % (ar_figure(rec["followers"]), creators))
         logo = ('<span class="reel__logo"><img src="%s" alt="" loading="lazy" decoding="async"></span>'
                 % rec["logo"]) if rec.get("logo") else ""
         poster = (' poster="%s"' % rec["shots"][0]) if rec.get("shots") else ""
@@ -276,7 +292,7 @@ def reel(ar=False):
             <div class="reel__body">
               <p class="reel__quote">{describe(rec, ar)}</p>
               <div class="reel__figs">
-                <div><b>{rec['followers']}</b><span>{L('Followers','المتابعون')}</span></div>
+                <div><b>{figure(rec['followers'], ar)}</b><span>{L('Followers','المتابعون')}</span></div>
                 <div><b>{rec['influencers']}</b><span>{L('Creators','صنّاع المحتوى')}</span></div>
               </div>
               {crew(rec, ar)}

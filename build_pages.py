@@ -120,7 +120,7 @@ def sponsors_body():
   </div></section>
   <section class="sec sec--tight"><div class="wrap">
     <div class="kpi-grid reveal">
-      <div class="kpi"><div class="kpi__top"><span class="kpi__label">Featured clients</span><span class="kpi__icon">人次</span></div><span class="kpi__value" data-count="75">75</span></div>
+      <div class="kpi"><div class="kpi__top"><span class="kpi__label">Featured clients</span><span class="kpi__icon">◈</span></div><span class="kpi__value" data-count="75">75</span></div>
       <div class="kpi"><div class="kpi__top"><span class="kpi__label">Countries</span><span class="kpi__icon">◉</span></div><span class="kpi__value" data-count="7">7</span></div>
       <div class="kpi"><div class="kpi__top"><span class="kpi__label">Categories</span><span class="kpi__icon">▦</span></div><span class="kpi__value" data-count="12">12</span></div>
     </div>
@@ -176,7 +176,7 @@ def contacts_body():
     <p class="lede">Stay connected with us! Whether you have a question, suggestion, or just want to say hello, we're here to help. Don't hesitate to reach out — we'd love to hear from you.</p>
   </div></section>
   <section class="sec sec--tight"><div class="wrap">
-    <div class="split split--form" style="grid-template-columns:1.4fr 1fr">
+    <div class="split split--form">
       <div class="card reveal">
         <div class="segmented" role="tablist" aria-label="I am a">
           <button role="tab" id="tab-inf" aria-controls="panel-inf" aria-selected="true" type="button">Influencer</button>
@@ -306,14 +306,14 @@ def sponsors_body_ar():
     return f"""
 <main id="main">
   <section class="pagehead"><div class="wrap pagehead-in">
-    <p class="tag">عملاؤنا</p><h1>خمس وسبعون علامة. سبعة أسواق.</h1>
-    <p class="lede">خمس وسبعون علامة تجارية عبر سبع دول واثنتا عشرة فئة اختارت إيليت للوصول إلى جمهورها.</p>
+    <p class="tag">عملاؤنا</p><h1>75 علامة تجارية. 7 أسواق.</h1>
+    <p class="lede">75 علامة تجارية في 7 دول و12 فئة اختارت إيليت للوصول إلى جمهورها.</p>
   </div></section>
   <section class="sec sec--tight"><div class="wrap">
     <div class="kpi-grid reveal">
-      <div class="kpi"><div class="kpi__top"><span class="kpi__label">عملاء مميّزون</span></div><span class="kpi__value" data-count="75">75</span></div>
-      <div class="kpi"><div class="kpi__top"><span class="kpi__label">الدول</span></div><span class="kpi__value" data-count="7">7</span></div>
-      <div class="kpi"><div class="kpi__top"><span class="kpi__label">الفئات</span></div><span class="kpi__value" data-count="12">12</span></div>
+      <div class="kpi"><div class="kpi__top"><span class="kpi__label">عملاء مميّزون</span><span class="kpi__icon">◈</span></div><span class="kpi__value" data-count="75">75</span></div>
+      <div class="kpi"><div class="kpi__top"><span class="kpi__label">الدول</span><span class="kpi__icon">◉</span></div><span class="kpi__value" data-count="7">7</span></div>
+      <div class="kpi"><div class="kpi__top"><span class="kpi__label">الفئات</span><span class="kpi__icon">▦</span></div><span class="kpi__value" data-count="12">12</span></div>
     </div>
     <div class="proof mt-8">
       <div class="card reveal"><h3 class="h4">العملاء حسب الفئة</h3>
@@ -352,10 +352,10 @@ def sponsors_body_ar():
     <div class="logo-grid mt-8 reveal" id="client-list">{cells}</div>
     <div class="state mt-8" id="client-empty" hidden><h3>لا عملاء في هذه الفئة بعد</h3><p>اختر فئة أخرى لمواصلة التصفّح.</p></div>
     <div class="state mt-8" data-search-empty hidden><h3>لا تطابق للاسم</h3><p>امسح البحث لرؤية القائمة كاملة.</p></div>
-    <p class="center subtle mt-10">عرض كل {len(CLIENTS)} عميلاً</p>
+    <p class="center subtle mt-10">عرض جميع العملاء الـ{len(CLIENTS)}</p>
   </div></section>
   <section class="sec sec--tight"><div class="wrap">
-    <div class="cta"><div class="wrap cta-in"><h2 class="cta-title">علامتك تنتمي إلى هنا.</h2><p class="cta-lede">انضم إلى خمس وسبعين علامة تدير حملات المؤثرين مع إيليت عبر الخليج وخارجه.</p><a class="btn btn-gold" href="contacts.html">كن عميلاً <span class="arrow" aria-hidden="true">→</span></a></div></div>
+    <div class="cta"><div class="wrap cta-in"><h2 class="cta-title">علامتك تنتمي إلى هنا.</h2><p class="cta-lede">انضم إلى 75 علامة تجارية تدير حملات المؤثرين مع إيليت في الخليج وخارجه.</p><a class="btn btn-gold" href="contacts.html">كن عميلاً <span class="arrow" aria-hidden="true">→</span></a></div></div>
   </div></section>
 </main>"""
 
@@ -367,9 +367,9 @@ def contacts_body_ar():
     <p class="lede">سؤال، أو فكرة حملة، أو رغبة في الانضمام إلى الشبكة — اكتب لنا، ويصلك ردّ من شخص حقيقي.</p>
   </div></section>
   <section class="sec sec--tight"><div class="wrap">
-    <div class="split split--form" style="grid-template-columns:1.4fr 1fr">
+    <div class="split split--form">
       <div class="card reveal">
-        <div class="segmented" role="tablist" aria-label="أنا">
+        <div class="segmented" role="tablist" aria-label="أنا صانع محتوى أو علامة تجارية">
           <button role="tab" id="tab-inf" aria-controls="panel-inf" aria-selected="true" type="button">صانع محتوى</button>
           <button role="tab" id="tab-brand" aria-controls="panel-brand" aria-selected="false" tabindex="-1" type="button">علامة تجارية</button>
         </div>
@@ -378,7 +378,7 @@ def contacts_body_ar():
           <form class="form-grid mt-6" data-validate data-success="شكراً — سيتواصل معك مدير شراكات إيليت.">
             <div class="field"><label class="field__label" for="i-name">الاسم <span class="req">*</span></label><input class="input" id="i-name" name="name" required placeholder="اسمك الكامل"><span class="field__error">يرجى إدخال اسمك.</span></div>
             <div class="field"><label class="field__label" for="i-country">الدولة</label><select class="select" id="i-country" name="country"><option value="">اختر الدولة</option><option>السعودية</option><option>الكويت</option><option>الإمارات</option><option>قطر</option><option>البحرين</option><option>مصر</option><option>أخرى</option></select></div>
-            <div class="field"><label class="field__label" for="i-email">البريد <span class="req">*</span></label><input class="input" id="i-email" name="email" type="email" required placeholder="you@example.com"><span class="field__error">أدخل بريدًا إلكترونيًا صحيحًا، مثل name@company.com.</span></div>
+            <div class="field"><label class="field__label" for="i-email">البريد <span class="req">*</span></label><input class="input" id="i-email" name="email" type="email" required placeholder="you@example.com"><span class="field__error">أدخل بريدًا إلكترونيًا صحيحًا، مثل <bdi>name@company.com</bdi></span></div>
             <div class="field"><label class="field__label" for="i-phone">الهاتف</label><input class="input" id="i-phone" name="phone" type="tel" placeholder="+966 …"></div>
             <div class="field--full"><label class="check"><input type="checkbox" name="whatsapp" checked><span>واتساب فعّال على هذا الرقم</span></label></div>
             <div class="field field--full"><label class="field__label" for="i-msg">رسالة</label><textarea class="textarea" id="i-msg" name="message" placeholder="أخبرنا عن جمهورك والعلامات التي تود العمل معها."></textarea></div>
@@ -390,7 +390,7 @@ def contacts_body_ar():
           <form class="form-grid mt-6" data-validate data-success="شكراً — سنرد بمخطط حملة قريباً.">
             <div class="field"><label class="field__label" for="b-name">الاسم <span class="req">*</span></label><input class="input" id="b-name" name="name" required placeholder="اسمك الكامل"><span class="field__error">يرجى إدخال اسمك.</span></div>
             <div class="field"><label class="field__label" for="b-brand">العلامة <span class="req">*</span></label><input class="input" id="b-brand" name="brand" required placeholder="اسم العلامة"><span class="field__error">يرجى إدخال علامتك.</span></div>
-            <div class="field"><label class="field__label" for="b-email">البريد <span class="req">*</span></label><input class="input" id="b-email" name="email" type="email" required placeholder="you@company.com"><span class="field__error">أدخل بريدًا إلكترونيًا صحيحًا، مثل name@company.com.</span></div>
+            <div class="field"><label class="field__label" for="b-email">البريد <span class="req">*</span></label><input class="input" id="b-email" name="email" type="email" required placeholder="you@company.com"><span class="field__error">أدخل بريدًا إلكترونيًا صحيحًا، مثل <bdi>name@company.com</bdi></span></div>
             <div class="field"><label class="field__label" for="b-country">الدولة</label><select class="select" id="b-country" name="country"><option value="">اختر الدولة</option><option>السعودية</option><option>الكويت</option><option>الإمارات</option><option>قطر</option><option>البحرين</option><option>مصر</option><option>أخرى</option></select></div>
             <div class="field"><label class="field__label" for="b-phone">الهاتف</label><input class="input" id="b-phone" name="phone" type="tel" placeholder="+966 …"></div>
             <div class="field"><label class="field__label" for="b-cat">الفئة</label><select class="select" id="b-cat" name="category"><option value="">اختر الفئة</option><option>مطاعم</option><option>مقاهٍ</option><option>أزياء</option><option>تجميل</option><option>عطور</option><option>فندقة</option><option>أخرى</option></select></div>
@@ -403,13 +403,13 @@ def contacts_body_ar():
       <aside class="stack reveal" style="transition-delay:.1s">
         <div class="card card--sunken"><h3 class="h4">ما الخطوات التالية</h3>
           <ol class="stack mt-6">
-            <li class="muted"><b class="gold">١ —</b> نقرأ موجزك ونتحقق من ملاءمة المؤثر.</li>
-            <li class="muted"><b class="gold">٢ —</b> تحصل على قائمة مختصرة وخطة وميزانية.</li>
-            <li class="muted"><b class="gold">٣ —</b> ندير الحملة ونقدّم التقارير مباشرة.</li>
+            <li class="muted"><b class="gold">1 —</b> نقرأ موجزك ونتحقق من ملاءمة المؤثر.</li>
+            <li class="muted"><b class="gold">2 —</b> تحصل على قائمة مختصرة وخطة وميزانية.</li>
+            <li class="muted"><b class="gold">3 —</b> ندير الحملة ونقدّم التقارير مباشرة.</li>
           </ol>
         </div>
         <div class="card card--sunken"><h3 class="h4">أين نعمل</h3><p class="muted mt-4">السعودية · الكويت · الإمارات · قطر · البحرين — وأكثر من 52 دولة حول العالم.</p></div>
-        <div class="card card--sunken"><h3 class="h4">دعم مباشر 24/7</h3><p class="muted mt-4">الحملات لا تتوقّف عند نهاية الدوام، ولا نحن.</p></div>
+        <div class="card card--sunken"><h3 class="h4">دعم مباشر على مدار الساعة</h3><p class="muted mt-4">الحملات لا تتوقّف عند نهاية الدوام، ولا نحن.</p></div>
       </aside>
     </div>
   </div></section>
@@ -440,9 +440,9 @@ def about_body_ar():
         <div class="stat-grid mt-8">
           <div class="stat"><span class="stat__value" data-count="10">10</span><span class="stat__label">سنوات</span></div>
           <div class="stat"><span class="stat__value" data-count="52">52</span><span class="stat__label">دولة</span></div>
-          <div class="stat"><span class="stat__value" data-count="50" data-suffix="B">50B</span><span class="stat__label">إجمالي المتابعين</span></div>
-          <div class="stat"><span class="stat__value" data-count="85" data-suffix="K">85K</span><span class="stat__label">صانع محتوى</span></div>
-          <div class="stat"><span class="stat__value" data-count="1500">1500</span><span class="stat__label">علامة عملنا معها</span></div>
+          <div class="stat"><span class="stat__value" data-count="50" data-suffix=" مليار">50 مليار</span><span class="stat__label">إجمالي المتابعين</span></div>
+          <div class="stat"><span class="stat__value" data-count="85" data-suffix=" ألف">85 ألف</span><span class="stat__label">صانع محتوى</span></div>
+          <div class="stat"><span class="stat__value" data-count="1500">1500</span><span class="stat__label">علامة تجارية</span></div>
         </div>
       </div>
     </div>
@@ -464,7 +464,7 @@ def about_body_ar():
 
 page("ar/case-studies.html","قصص النجاح — إيليت","نجاحٌ في الواقع: حملات المؤثرين التي أطلقتها إيليت لعلامات راقية، مع أرقام الوصول وعدد صنّاع المحتوى.",cases_body_ar(),ar=True)
 page("ar/sponsors.html","عملاؤنا — إيليت","خمس وسبعون علامة عبر سبع دول واثنتا عشرة فئة تتشارك مع إيليت في التسويق عبر المؤثرين.",sponsors_body_ar(),ar=True)
-page("ar/contacts.html","تواصل معنا — إيليت","تحدّث إلى إيليت عن حملة مؤثرين، أو انضم إلى الشبكة كصانع محتوى. دعم مباشر 24/7.",contacts_body_ar(),ar=True)
+page("ar/contacts.html","تواصل معنا — إيليت","تحدّث إلى إيليت عن حملة مؤثرين، أو انضم إلى الشبكة كصانع محتوى. دعم مباشر على مدار الساعة.",contacts_body_ar(),ar=True)
 page("ar/about.html","من نحن — إيليت","أكثر من عقد من التسويق عبر المؤثرين عبر أكثر من 52 دولة. رسالة إيليت ومنهجها وأسباب بقاء العلامات.",about_body_ar(),ar=True)
 
 print("DONE")

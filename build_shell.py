@@ -127,7 +127,7 @@ def footer(ar=False):
     <div><h4>{L('Our social media','وسائل التواصل')}</h4><ul class="foot-list"><li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li></ul></div>
   </div>
   <div class="wrap foot-bottom">
-    <span>Copyright © <span data-year>2026</span> Elite — {L('all rights reserved','جميع الحقوق محفوظة')}</span>
+    <span>{L('Copyright © <span data-year>2026</span> Elite — all rights reserved','© <span data-year>2026</span> إيليت — جميع الحقوق محفوظة')}</span>
     <span>{L('Niche Mastery Redefined','إتقانٌ يُعيد تعريف التميّز')}</span>
   </div>
 </footer>
