@@ -238,6 +238,7 @@ li{list-style:none}
 }
 .marquee-track{display:flex;flex:0 0 auto;align-items:center;animation:slide 62s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
+.trust.is-paused .marquee-track{animation-play-state:paused}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 .logo-cell{
   flex:0 0 auto;padding:0 clamp(24px,3.4vw,52px);
@@ -265,7 +266,11 @@ li{list-style:none}
   font-family:Montserrat,system-ui,sans-serif;font-weight:600;font-size:.66rem;
   letter-spacing:.18em;color:var(--gold-text);font-variant-numeric:tabular-nums;
 }
-.svc-title{font-size:var(--step-2);line-height:1.06}
+.svc-title{
+  font-size:clamp(1.45rem,1.15rem + .85vw,2rem);line-height:1.08;
+  /* "Performance" is the longest word in the set and must not spill. */
+  overflow-wrap:break-word;hyphens:auto;
+}
 .svc-title b{display:block;font-weight:700;letter-spacing:-.01em}
 .svc-title span{display:block;font-weight:300;color:var(--ink-soft)}
 .svc-copy{color:var(--ink-soft);font-size:var(--step-0);line-height:1.62}
@@ -281,7 +286,7 @@ li{list-style:none}
 .why-item p{color:var(--ink-soft);font-size:.95rem;line-height:1.6}
 
 /* ============ MARKET / PROOF ============ */
-.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,5vw,72px)}
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(28px,5vw,72px)}
 .proof h3{font-size:var(--step-1);font-weight:500;margin-bottom:22px}
 .meters{display:grid;gap:18px}
 .meter-row{display:grid;gap:8px}
@@ -335,6 +340,7 @@ li{list-style:none}
 .split--reverse .split__media{order:2}
 .split__media{position:relative;aspect-ratio:4/3;border-radius:var(--r-card);background:var(--surface-2);overflow:hidden;border:1px solid var(--line)}
 @media (max-width:760px){
+  .form-grid{grid-template-columns:1fr}
   .split,.split--reverse{grid-template-columns:1fr}
   .split--reverse .split__media{order:0}
 }
@@ -454,12 +460,12 @@ li{list-style:none}
 .cta .eyebrow{color:var(--gold)}
 
 /* ============ PAGE HEAD ============ */
-.pagehead{background:var(--obsidian);color:var(--on-obsidian);padding-block:clamp(60px,10vh,110px) clamp(40px,6vh,72px);text-align:center;position:relative;overflow:hidden}
+.pagehead{background:var(--obsidian);color:var(--on-obsidian);padding-block:clamp(88px,14vh,168px) clamp(64px,9vh,112px);text-align:center;position:relative;overflow:hidden}
 .pagehead::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 120% at 50% 0%,rgba(195,147,94,.12),transparent 60%)}
-.pagehead-in{position:relative;display:grid;gap:18px;justify-items:center;max-width:64ch;margin-inline:auto}
-.pagehead h1{font-size:var(--step-3);letter-spacing:.04em;font-weight:300}
+.pagehead-in{position:relative;display:grid;gap:26px;justify-items:center;max-width:78ch;margin-inline:auto}
+.pagehead h1{font-size:var(--step-3);letter-spacing:.02em;font-weight:300;max-width:20ch}
 .pagehead .tag{font-family:Montserrat,system-ui,sans-serif;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.pagehead .lede{color:var(--on-obsidian-soft);font-size:var(--step-1);line-height:1.6;max-width:60ch}
+.pagehead .lede{color:var(--on-obsidian-soft);font-size:var(--step-1);line-height:1.65;max-width:68ch}
 .pagehead .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:8px}
 
 /* ============ FOOTER ============ */
@@ -663,7 +669,7 @@ img.is-broken{visibility:hidden}
    --card-accent is an HSL triple set per market on the element.
    ============================================================ */
 .dcard-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));
   gap:clamp(18px,2.2vw,28px);
 }
 .dcard{
@@ -897,4 +903,12 @@ img.is-broken{visibility:hidden}
 .dcard__play[aria-pressed="true"] .ico-pause{display:block}
 @media (prefers-reduced-motion:reduce){
   .dcard__play,.dcard:hover .dcard__play{transition:none;transform:translate(-50%,-50%)}
+}
+
+/* Safety net against a stray wide child: clip, not hidden, so position:sticky
+   on the header keeps working. */
+html,body{overflow-x:clip}
+@media (pointer:coarse){
+  .dcard__cta{min-height:44px}
+  .reel__play,.dcard__play{width:56px;height:56px}
 }

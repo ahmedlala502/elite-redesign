@@ -71,11 +71,13 @@ for page, ar in ALL:
         if not os.path.exists(target):
             note(page, "link", "dead link -> %s" % href)
 
-    # --- asset references resolve ---
-    for src in re.findall(r'src="([^"]+)"', s):
+    # --- asset references resolve (src and video posters alike) ---
+    for src in re.findall(r'src="([^"]+)"', s) + re.findall(r'poster="([^"]+)"', s):
         if src.startswith(("http", "data:")):
             continue
-        if not os.path.exists(os.path.normpath(os.path.join(base, src))):
+        # A leading slash is root-relative to the site, not to this page.
+        target = os.path.join(ROOT, src.lstrip("/")) if src.startswith("/") else os.path.join(base, src)
+        if not os.path.exists(os.path.normpath(target)):
             note(page, "asset", "missing asset -> %s" % src)
 
     # --- in-page anchors resolve ---

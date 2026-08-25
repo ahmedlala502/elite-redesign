@@ -674,6 +674,7 @@ CASE_STUDIES = [
         "still":       None,
         "logo":        'https://grand-community.fra1.digitaloceanspaces.com/uploads-live/f_s3/photos/brands/2025-11/1849298978115382.png',
         "shots":       [
+            '/assets/img/posters/kiko.jpg',
         ],
         "avatars":     [
             'https://grand-community.fra1.digitaloceanspaces.com/uploads-live/f_s3/2024-12/photos/influencers/eg/instagram/mennathabet_makeupartist_42891819.jpeg',
@@ -712,6 +713,7 @@ CASE_STUDIES = [
         "still":       None,
         "logo":        'https://grand-community.fra1.digitaloceanspaces.com/uploads-live/f_s3/photos/brands/2026-02/1856726442503833.png',
         "shots":       [
+            '/assets/img/posters/million-riyal-menu.jpg',
         ],
         "avatars":     [
             'https://grand-community.fra1.digitaloceanspaces.com/uploads-live/f_s3/2025-07/photos/influencers/sa/instagram/u7l7_1838090066685013.jpg',

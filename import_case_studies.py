@@ -70,6 +70,14 @@ VIDEOS = {
     "Jones the Grocer":   CDN + "/photos/case_studies/2025-05/1832466427021874.mp4",
 }
 
+# Poster frames for films the export gave no still for, pulled from the first
+# second of each film with ffmpeg and committed under assets/img/posters/.
+# Every film must have a poster, or its card shows an empty box until played.
+POSTERS = {
+    "Kiko":               "/assets/img/posters/kiko.jpg",
+    "Million Riyal Menu": "/assets/img/posters/million-riyal-menu.jpg",
+}
+
 # Stills for the two campaigns that have artwork but no film.
 STILLS = {
     "Fred":    CDN + "/photos/case_studies/2026-03/1861000674652848.jpg",
@@ -123,7 +131,7 @@ def main():
             "category": CATEGORIES.get(name, ""),
             "video": VIDEOS.get(name),
             "still": STILLS.get(name),
-            "shots": shots,
+            "shots": ([POSTERS[name]] + shots) if name in POSTERS else shots,
             "logo": logo,
             "avatars": avatars,
         })
@@ -172,6 +180,11 @@ def main():
     print("         %d films, %d stills, %d with shots, %d categorised"
           % (films, stills, sum(1 for r in records if r["shots"]), cats))
     print("         %d without a category on record" % (len(records) - cats))
+    # A film with no poster renders an empty box until it is played.
+    unposter = [r["name"] for r in records if r["video"] and not r["shots"]]
+    if unposter:
+        sys.exit("films with no poster frame: %s. Extract one with ffmpeg "
+                 "and add it to POSTERS." % ", ".join(unposter))
     blank = [r["name"] for r in records if not (r["video"] or r["still"] or r["shots"])]
     print("         %d with no frame on file (excluded from the grid): %s"
           % (len(blank), ", ".join(blank) or "none"))
