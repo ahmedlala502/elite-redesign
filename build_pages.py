@@ -234,7 +234,7 @@ def about_body():
   </div></section>
   <section class="sec sec--tight"><div class="wrap">
     <div class="split">
-      <div class="split__media reveal" style="display:grid;place-items:center;color:var(--gold-text);font-family:'Red Hat Display',sans-serif;font-size:8rem;font-weight:300">E</div>
+      <div class="split__media split__media--logo reveal"><img src="assets/img/elite-logo.svg" alt="Elite — Niche Mastery Redefined" width="572" height="232" loading="lazy" decoding="async"></div>
       <div class="reveal" style="transition-delay:.1s">
         <p class="eyebrow">Who we are</p>
         <h2 class="sec-title mt-4">A decade of influence, in more than 52 countries.</h2>
@@ -432,7 +432,7 @@ def about_body_ar():
   </div></section>
   <section class="sec sec--tight"><div class="wrap">
     <div class="split">
-      <div class="split__media reveal" style="display:grid;place-items:center;color:var(--gold-text);font-family:'Red Hat Display',sans-serif;font-size:8rem;font-weight:300">E</div>
+      <div class="split__media split__media--logo reveal"><img src="../assets/img/elite-logo.svg" alt="إيليت — إتقانٌ يُعيد تعريف التميّز" width="572" height="232" loading="lazy" decoding="async"></div>
       <div class="reveal" style="transition-delay:.1s">
         <p class="eyebrow">من نحن</p>
         <h2 class="sec-title mt-4">عقد من التأثير، في أكثر من 52 دولة.</h2>

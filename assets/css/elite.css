@@ -908,3 +908,12 @@ html,body{overflow-x:clip}
   .dcard__cta{min-height:44px}
   .reel__play,.dcard__play{width:56px;height:56px}
 }
+
+/* Brand plaque on the About page. The logo artwork is dark slate with a gold
+   tagline, so the panel keeps a light ground in both themes rather than
+   inverting it — inverting would turn the gold half blue. */
+.split__media--logo{
+  background:#F4F2F0;display:grid;place-items:center;
+  padding:clamp(28px,5vw,64px);border-color:rgba(20,19,18,.12);
+}
+.split__media--logo img{width:min(78%,360px);height:auto;object-fit:contain}
